@@ -1,0 +1,93 @@
+:root {
+    --letterfont: ;
+    --blanco: #fff;
+    --negroAzulado: #051a2c;
+}
+
+html {
+    /* se reinicia el tamaño de la letra a 62.5% */
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    box-sizing: border-box;
+    /* hack para box model */
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* hack para box model */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/*Globales*/
+.container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*pagina principal */
+.fondo {
+    background: linear-gradient(rgba(6, 26, 76, 0.75), rgba(5,7,12,0.75)),
+                url("../img/fondo\ op\ 1.png") 
+                no-repeat center center fixed;
+    background-size: cover;    
+}
+
+.img {
+    width: 10rem;
+    height: 10rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.boton {
+    color: var(--negroAzulado);
+    font-weight: 400;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    padding: 1.6rem 3.6rem;
+    border: 0.2rem solid var(--negroAzulado);
+    border-radius: 2.9rem;
+    transform: translate(0);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+}
+
+.boton_iniciar {
+    background: var(--blanco);
+}
+
+.boton_agregar {
+    background: var(--blanco);
+}
+
+/*juego*/
+.seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.seccion_dibujo {
+    min-width: 90%;
+    min-height: 50%;
+    background-color: #f7f7f7;
+}
