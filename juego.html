@@ -16,17 +16,21 @@
     <header>
         <a href="index.html"><img src="img/logoAhorcado.png" alt="logo para ir a inicio"></a>
     </header>
-    <main class="container container_juego">
-        <section class="seccion">
-            <div class="seccion_dibujo"> </div>
+    <main class="container_juego">
+        <section class="seccion_dibujo">
+            <div class="dibujo"></div>
+            <div class="palabra" id="adivinaPalabra">
+            </div>
         </section>
-        <div class="section_letra">
+        <div class="seccion_letra">
             <form action="">
                 <input class="texto" type="text">
                 <input class="boton" type="submit" name="boton">
             </form>
         </div>
     </main>
+
+    <script type="module" src="jugar.js"></script>
 </body>
 
 </html>

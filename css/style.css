@@ -38,15 +38,19 @@ img {
 }
 
 /*Globales*/
-.container {
+.container_index {
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10rem;
 }
 
 .container_juego {
-    flex-direction: column;    
+    max-width: 80%;
+    height: 80%;
+    margin: 2rem auto;
+    column-gap: 3rem; 
 }
 
 /*pagina principal */
@@ -96,9 +100,10 @@ img {
 }
 
 .seccion_dibujo {
-    min-width: 90%;
-    min-height: 90%;
+    min-height: 80%;
     background-color: #f7f7f7;
+    display: grid;
+    grid-template-rows: 90% 10%;
 }
 
 /* Formulario Palabra */
@@ -119,4 +124,20 @@ img {
 .btn_palabra {
     display: flex;
     gap: 3rem;
+}
+
+.palabra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.seccion_letra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 2rem auto 0;
 }
