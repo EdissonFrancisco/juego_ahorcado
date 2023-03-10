@@ -131,8 +131,15 @@ img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60%;
-    margin: auto;
+    
+    margin: 0 auto;
+    padding: 0;
+}
+
+.palabra p{
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 0.8rem;
 }
 
 .seccion_letra {
