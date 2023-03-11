@@ -27,7 +27,7 @@ body {
 }
 
 .fondo {
-    background: linear-gradient(rgba(6, 26, 76, 0.35), rgba(5,7,12,0.35)),
+    background: linear-gradient(rgba(6, 26, 76, 0.35), rgba(5,7,12,0.45)),
                 url("../img/fondo\ op\ 1.png") 
                 no-repeat center center fixed;
     background-size: cover;    
@@ -91,22 +91,6 @@ img {
     background: var(--blanco);
 }
 
-/* Secciones Juego*/
-/*.seccion {
-    display: flex;
-    flex-direction: column;
-    min-width: 90%;
-    min-height: 95%;
-    justify-content: center;
-}*/
-
-.seccion_dibujo {
-    min-height: 80%;
-    background-color: #f7f7f7;
-    display: grid;
-    grid-template-rows: 90% 10%;
-}
-
 /* Formulario Palabra */
 .forms {
     display: flex;
@@ -143,9 +127,53 @@ img {
 }
 
 .seccion_letra {
+    display: block;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 80%;
     margin: 2rem auto 0;
+}
+
+/* Secciones Juego*/
+.seccion_dibujo {
+    display: block;
+    min-height: 80%;
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+.dibujo {
+    height: 100%; /* Tomar el 100% del espacio vertical del padre */
+    width: 186px;
+    margin: auto auto; /* Centrar horizontalmente */
+    background-image: url("../img/ahorcado.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px 50%;
+}
+
+/*Fin del juego */
+.activar {
+    display: none;
+}
+
+.activar p{
+    text-align: center;
+    font-size: 8rem;
+    margin: 0;
+    color: #fff;
+}
+.activar img{
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.activar a{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
 }

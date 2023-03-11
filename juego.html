@@ -17,21 +17,27 @@
         <a href="index.html"><img src="img/logoAhorcado.png" alt="logo para ir a inicio"></a>
     </header>
     <main class="container_juego">
-        <section class="seccion_dibujo">
-            <div class="dibujo"></div>
+        <div class="seccion_dibujo">
+            <div class="dibujo" id="colgado"></div>
             <div class="palabra">
                 <p id="adivinaPalabra"></p>
             </div>
-        </section>
+        </div>
         <div class="seccion_letra">
             <form action="">
                 <input id="letra" class="texto" type="text" title="ingresoPalabra">
                 <input id="comprobar" class="boton" type="submit" name="boton">
             </form>
         </div>
+
+        <div class="activar">
+            <p>perdio</p>
+            <img src="./img/logoAhorcado.png" alt="logo del juego">
+            <a class="boton boton_iniciar" href="juego.html">Jugar de nuevo</a>
+        </div>
     </main>
 
-    <script type="module" src="agregarPalabra.js"></script>
+    <script type="module" src="juego.js"></script>
 </body>
 
 </html>

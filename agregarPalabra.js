@@ -1,3 +1,4 @@
+
 // Prevengo que la pagina se recarge y se borren los datos que se ingresan 
 document.addEventListener('click', (e) => {
   const enlace = e.target.closest('a');
@@ -21,11 +22,19 @@ if (btnAgregar !== null) {
   btnAgregar.addEventListener('click', (e) => {
     e.preventDefault();
     const nuevaPalabra = palabraImput.value.trim();//quito espacios de la cadena 
+    
     if (!nuevaPalabra) { alert("El campo está vacío"); return; }
-    arrayPlabras.push(nuevaPalabra);
+
+    const expReg = /^[a-zA-ZñÑ]+$/;
+    const esPalabra = expReg.test(nuevaPalabra);
+
+    if ((nuevaPalabra.length <= 15 || nuevaPalabra.length > 15) && esPalabra === false) { alert("no es una palabra o es muy larga, ingrese palabras sin asentos"); return; }
+
+    arrayPlabras.push(nuevaPalabra.toUpperCase());
     sessionStorage.setItem('palabras', JSON.stringify(arrayPlabras));
     palabraImput.value = '';
     alert('Palabra agregada con exito');
+
   });
 }
 
@@ -34,41 +43,10 @@ if (btnCancelar !== null) {
     palabraImput.value = '';
   });
 }
+
+export default arrayPlabras;
+
 /** Fin palabra.html */
 
-/** juego.html */
-
-const palabraSeleccionada = arrayPlabras[Math.floor(Math.random() * arrayPlabras.length)]; 
 
 
-const palabraAdivinar = '_'.repeat(palabraSeleccionada.length);
-const palabraEscondida = document.getElementById('adivinaPalabra');
-palabraEscondida.textContent = palabraAdivinar;
-
-const btncomprobar = document.getElementById('comprobar');
-const letraInput = document.getElementById('letra');
-
-if (btncomprobar !== null) {
-  btncomprobar.addEventListener('click', (e) => {
-    e.preventDefault();    
-    const letra = letraInput.value.trim();
-
-    if (letra) {
-      
-      const indice = [...palabraSeleccionada].reduce((acc, l, i) => l === letra ? [...acc, i] : acc, []);
-      if (indice.length > 0) {
-        const palabraAdivinarArr = [...palabraAdivinar];
-        
-        indice.forEach(item => palabraAdivinarArr[item] = letra);
-        
-        palabraAdivinar = palabraAdivinarArr.join('');
-        palabraEscondida.textContent = palabraAdivinar;
-        if (palabraAdivinar === palabraSeleccionada) {
-          alert('¡Felicidades, has adivinado la palabra!');
-        }
-      } 
-    }
-    //letra.value = '';
-  });
-}
-/** Fin juego.html */
